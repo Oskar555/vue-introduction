@@ -2,17 +2,33 @@
 <html>
 <head>
 	<title>main</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.1/css/bulma.css">
 </head>
 	<body>
+		<h1>Vue-introduction</h1>
 
 		<div id="app">
-			<p>{{ message }}</p>
+
+		<div class="field">
+		  <div class="control">
+		    <input class="input" type="text" v-model='message' placeholder="Text input">
+		  </div>
 		</div>
 
-		<h1>Test</h1>
+		<div class="field">
+		  <div class="control">
+		    <input class="input" type="text" v-model='message2' placeholder="Text input">
+		  </div>
+		</div>
 
-		<p>lolollo</p>	
+			<p>
+				<span>your name is:</span>
+				<span v-text="message+' '+message2"></span>
+			</p>
 
+
+		</div>
 
 		<script src="https://unpkg.com/vue"></script>
 		<script type="text/javascript">
@@ -21,7 +37,8 @@
 
 			el: '#app',
 			data:{
-				message: 'Hello Vue!'
+				message: '',
+				message2: ''
 			}
 		
 		});
